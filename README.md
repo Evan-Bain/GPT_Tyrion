@@ -16,7 +16,15 @@ WITH API KEY SECURITY
 --------------------------------------------------------------------------------------------------
 - Naviagate to generated file: local.properties", located at ..\GPT_Tyrion\local.properties
 - Add: openaiKey = [YOUR_API_KEY]
--     openaiKey = sk-FsdfjksBdfsfGdsfsdGjsnwojncbYUERh
+  1.     openaiKey = sk-FsdfjksBdfsfGdsfsdGjsnwojncbYUERh
+- Navigate to app's build.gradle file: "build.gradle", located at: ..\GPT_Tyrion\app\build.gradle (Module :app)
+- Complete both TODOs:
+  
+  1.     //TODO: Uncomment code
+         /*def localProperties = new Properties()
+         localProperties.load(new FileInputStream(rootProject.file("local.properties")))*/
+  2.     //TODO: Uncomment code
+         //resValue("string", "openai_key", localProperties['openaiKey'])
 - Rebuild project
 - Run project in debug mode to use API key
 
@@ -25,6 +33,6 @@ WITHOUT API KEY SECURITY
 - Navigate to file "TestUse.kt", located at: ..\GPT_Tyrion\app\src\main\java\com\example\gpt_tyrion\open_ai\TestUse.kt
 - Replace value of "apiKey" to [YOUR_API_KEY]
 - Before:
--     private val apiKey: String = context.getString(R.string.openai_key)
+  1.     private val apiKey: String = context.getString(R.string.openai_key)
 - After:
--     private val apiKey: String = "[YOUR_API_KEY]"
+  1.     private val apiKey: String = "[YOUR_API_KEY]"
