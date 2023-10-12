@@ -1,28 +1,19 @@
 package com.example.gpt_tyrion
 
-import android.Manifest
 import android.content.Context
-import android.content.pm.PackageManager
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import androidx.activity.result.contract.ActivityResultContracts.RequestPermission
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.aallam.openai.api.BetaOpenAI
 import com.example.gpt_tyrion.databinding.FragmentTyrionBinding
 import com.example.gpt_tyrion.open_ai.TestUse
 import com.example.gpt_tyrion.viewModels.TyrionViewModel
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.emitAll
-import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.launch
-import java.security.Permission
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -36,7 +27,7 @@ class TyrionFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        checkAudioPermission()
+        //checkAudioPermission()
     }
 
     override fun onCreateView(
@@ -46,7 +37,7 @@ class TyrionFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_tyrion, container, false
         )
-        openAiClient = TestUse(requireContext().applicationInfo)
+        openAiClient = TestUse(requireContext())
 
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
@@ -77,7 +68,7 @@ class TyrionFragment : Fragment() {
     }
 
     /** Check permission for recording audio **/
-    private fun checkAudioPermission(): Boolean {
+    /*private fun checkAudioPermission(): Boolean {
         val permission = Manifest.permission.RECORD_AUDIO
         var granted = false
 
@@ -93,7 +84,7 @@ class TyrionFragment : Fragment() {
         requestPermissionLauncher.launch(permission)
 
         return granted
-    }
+    }*/
 
     @OptIn(BetaOpenAI::class)
     private suspend fun getChat(userText: String): String {

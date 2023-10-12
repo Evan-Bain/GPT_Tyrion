@@ -8,6 +8,9 @@ android {
     namespace 'com.example.gpt_tyrion'
     compileSdk 34
 
+    def localProperties = new Properties()
+    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
     defaultConfig {
         applicationId "com.example.gpt_tyrion"
         minSdk 26
@@ -19,6 +22,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            resValue("string", "openai_key", localProperties['openaiKey'])
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

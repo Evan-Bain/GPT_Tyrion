@@ -1,18 +1,20 @@
 package com.example.gpt_tyrion.open_ai
 
-import android.content.pm.ApplicationInfo
+import android.content.Context
 import com.aallam.openai.api.BetaOpenAI
-import com.aallam.openai.api.chat.*
+import com.aallam.openai.api.chat.ChatCompletion
+import com.aallam.openai.api.chat.ChatCompletionRequest
+import com.aallam.openai.api.chat.ChatMessage
+import com.aallam.openai.api.chat.ChatRole
 import com.aallam.openai.api.model.ModelId
 import com.aallam.openai.client.OpenAI
-import kotlinx.coroutines.flow.Flow
+import com.example.gpt_tyrion.R
 
-class TestUse(appInfo: ApplicationInfo) {
+class TestUse(context: Context) {
 
     //NOTE: ADD NULL SAFETY
-    //TODO: OBTAIN API KEY FROM OPENAI
-    // INSERT API KEY HERE
-    /*API KEY --> */ private val apiKey: String = "INSERT YOUR API KEY HERE" //<-- API KEY
+
+    private val apiKey: String = context.getString(R.string.openai_key)
     private val openAI = OpenAI(apiKey)
 
     @OptIn(BetaOpenAI::class)
