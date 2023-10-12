@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GPT_Tyrion</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Welcome</string>
+    <string name="second_fragment_label">Tyrion</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="tyrion">Tyrion</string>
+    <string name="talk">Talk</string>
+</resources>
