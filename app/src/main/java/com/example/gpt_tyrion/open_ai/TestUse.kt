@@ -13,7 +13,6 @@ import com.example.gpt_tyrion.R
 class TestUse(context: Context) {
 
     //NOTE: ADD NULL SAFETY
-
     private val apiKey: String = context.getString(R.string.openai_key)
     private val openAI = OpenAI(apiKey)
 
