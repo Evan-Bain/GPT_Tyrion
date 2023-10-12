@@ -2,15 +2,16 @@
 A basic implementation of the GPT API
 
 - Currently uses GPT model: "GPT-3.5-turbo", which specializes in conversation.
+- Implements OpenAI's official API recommendation for Kotlin compatibility: [openai-kotlin](https://github.com/aallam/openai-kotlin) by [Mouadd Aallam](https://github.com/aallam)
 - Tyrion does not remember previous messages/conversations.
 - Tyrion will only respond to input recently given.
 
 SETUP:
 --------------------------------------------------------------------------------------------------
-Obtain API KEY from OpenAI: https://platform.openai.com/account/api-keys.
+Obtain API Key from OpenAI: [Click Here](https://platform.openai.com/account/api-keys)
 
-- Open with Android Studio.
-- Display in "Project" view.
+- Open with Android Studio
+- Display in "Project" view
 
 WITH API KEY SECURITY
 --------------------------------------------------------------------------------------------------
